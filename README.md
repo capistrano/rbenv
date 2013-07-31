@@ -18,7 +18,7 @@ And then execute:
 
     require 'capistrano/rbenv'
 
-    set :rbenv_type, :user # or system, depends on your rbenv setup
+    set :rbenv_type, :user # or :system, depends on your rbenv setup
     set :rbenv_ruby_version, '2.0.0-p247'
 
 If your rbenv is located in some custom path, you can use `rbenv_custom_path` to set it.
