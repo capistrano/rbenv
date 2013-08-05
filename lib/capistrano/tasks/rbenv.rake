@@ -22,7 +22,7 @@ end
 namespace :rbenv do
   task :check do
     on roles(:all) do
-      unless test "[ -d #{rbenv_ruby_dir} ]"
+      if test "[ ! -d #{rbenv_ruby_dir} ]"
         error "rbenv: #{fetch(:rbenv_ruby)} is not installed or not found in #{rbenv_ruby_dir}"
         exit 1
       end
