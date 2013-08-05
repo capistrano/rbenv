@@ -1,6 +1,3 @@
-USER_RBENV_PATH = "~/.rbenv"
-SYSTEM_RBENV_PATH = "/usr/local/rbenv"
-
 namespace :deploy do
   before :starting, :hook_rbenv_bins do
     invoke :'rbenv:check'
@@ -37,9 +34,9 @@ end
 def rbenv_path
   path = fetch(:rbenv_custom_path)
   path ||= if fetch(:rbenv_type) == "system"
-    SYSTEM_RBENV_PATH
+    "/usr/local/rbenv"
   else
-    USER_RBENV_PATH
+    "~/.rbenv"
   end
 
   path
