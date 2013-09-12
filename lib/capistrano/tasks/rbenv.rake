@@ -4,7 +4,7 @@ end
 
 SSHKit.config.command_map = Hash.new do |hash, key|
   if fetch(:rbenv_map_bins).include?(key.to_s)
-    prefix = "RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+    prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
     hash[key] = if bundler_loaded? && key.to_s != "bundle"
       "#{prefix} bundle exec #{key}"
     else
@@ -40,10 +40,9 @@ end
 
 namespace :load do
   task :defaults do
-    set :rbenv_type, :user
 
     rbenv_path = fetch(:rbenv_custom_path)
-    rbenv_path ||= if fetch(:rbenv_type) == :system
+    rbenv_path ||= if fetch(:rbenv_type, :user) == :system
       "/usr/local/rbenv"
     else
       "~/.rbenv"
