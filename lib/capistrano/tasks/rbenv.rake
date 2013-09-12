@@ -40,10 +40,9 @@ end
 
 namespace :load do
   task :defaults do
-    set :rbenv_type, :user
 
     rbenv_path = fetch(:rbenv_custom_path)
-    rbenv_path ||= if fetch(:rbenv_type) == :system
+    rbenv_path ||= if fetch(:rbenv_type, :user) == :system
       "/usr/local/rbenv"
     else
       "~/.rbenv"
