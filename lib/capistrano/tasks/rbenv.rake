@@ -41,15 +41,16 @@ end
 namespace :load do
   task :defaults do
 
-    rbenv_path = fetch(:rbenv_custom_path)
-    rbenv_path ||= if fetch(:rbenv_type, :user) == :system
-      "/usr/local/rbenv"
-    else
-      "~/.rbenv"
-    end
-    set :rbenv_path, rbenv_path
+    set :rbenv_path, -> {
+      rbenv_path = fetch(:rbenv_custom_path)
+      rbenv_path ||= if fetch(:rbenv_type, :user) == :system
+        "/usr/local/rbenv"
+      else
+        "~/.rbenv"
+      end
+    }
 
-    set :rbenv_ruby_dir, "#{rbenv_path}/versions/#{fetch(:rbenv_ruby)}"
+    set :rbenv_ruby_dir, -> { "#{fetch(:rbenv_path)}/versions/#{fetch(:rbenv_ruby)}" }
     set :rbenv_map_bins, %w{rake gem bundle ruby}
   end
 end
