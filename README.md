@@ -1,5 +1,14 @@
 # Capistrano::rbenv
 
+This gem provides idiomatic rbenv support for Capistrano 3.x (and 3.x
+*only*).
+
+## Please Note
+
+This ```capistrano-rbenv``` repo is different from the current
+```capistrano-rbenv``` gem on rubygems.org. You **must** specify
+**this github repo** in your Gemfile!
+
 ## Installation
 
 Add this line to your application's Gemfile:
