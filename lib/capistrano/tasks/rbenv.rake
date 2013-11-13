@@ -27,10 +27,10 @@ namespace :rbenv do
 
   task :command_map do
     on roles(:all) do
+      prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} "    \
+               "RBENV_VERSION=#{fetch(:rbenv_ruby)} " \
+               "#{fetch(:rbenv_path)}/bin/rbenv exec"
       fetch(:rbenv_map_bins).each do |bin|
-        prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} "    \
-                 "RBENV_VERSION=#{fetch(:rbenv_ruby)} " \
-                 "#{fetch(:rbenv_path)}/bin/rbenv exec"
         SSHKit.config.command_map[bin.to_sym] = begin
           if bundler_loaded? && bin.to_s != "bundle"
             "#{prefix} bundle exec #{bin}"
