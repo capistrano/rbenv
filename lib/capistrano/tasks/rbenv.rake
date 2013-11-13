@@ -2,22 +2,10 @@ def bundler_loaded?
   Gem::Specification::find_all_by_name('capistrano-bundler').any?
 end
 
-SSHKit.config.command_map = Hash.new do |hash, key|
-  if fetch(:rbenv_map_bins).include?(key.to_s)
-    prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-    hash[key] = if bundler_loaded? && key.to_s != "bundle"
-      "#{prefix} bundle exec #{key}"
-    else
-      "#{prefix} #{key}"
-    end
-  else
-    hash[key] = key
-  end
-end
-
 namespace :deploy do
   before :starting, :hook_rbenv_bins do
     invoke :'rbenv:check'
+    invoke :'rbenv:command_map'
   end
 end
 
@@ -33,6 +21,23 @@ namespace :rbenv do
       if test "[ ! -d #{fetch(:rbenv_ruby_dir)} ]"
         error "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)}"
         exit 1
+      end
+    end
+  end
+
+  task :command_map do
+    on roles(:all) do
+      fetch(:rbenv_map_bins).each do |bin|
+        prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} "    \
+                 "RBENV_VERSION=#{fetch(:rbenv_ruby)} " \
+                 "#{fetch(:rbenv_path)}/bin/rbenv exec"
+        SSHKit.config.command_map[bin.to_sym] = begin
+          if bundler_loaded? && bin.to_s != "bundle"
+            "#{prefix} bundle exec #{bin}"
+          else
+            "#{prefix} #{bin}"
+          end
+        end
       end
     end
   end
