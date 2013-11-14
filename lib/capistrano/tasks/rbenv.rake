@@ -5,8 +5,11 @@ end
 namespace :deploy do
   before :starting, :hook_rbenv_bins do
     invoke :'rbenv:check'
-    invoke :'rbenv:command_map'
   end
+end
+
+Capistrano::DSL.stages.each do |stage|
+  after stage, :'rbenv:command_map'
 end
 
 namespace :rbenv do
@@ -26,17 +29,15 @@ namespace :rbenv do
   end
 
   task :command_map do
-    on roles(:all) do
-      prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} "    \
-               "RBENV_VERSION=#{fetch(:rbenv_ruby)} " \
-               "#{fetch(:rbenv_path)}/bin/rbenv exec"
-      fetch(:rbenv_map_bins).each do |bin|
-        SSHKit.config.command_map[bin.to_sym] = begin
-          if bundler_loaded? && bin.to_s != "bundle"
-            "#{prefix} bundle exec #{bin}"
-          else
-            "#{prefix} #{bin}"
-          end
+    prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} "    \
+             "RBENV_VERSION=#{fetch(:rbenv_ruby)} " \
+             "#{fetch(:rbenv_path)}/bin/rbenv exec"
+    fetch(:rbenv_map_bins).each do |bin|
+      SSHKit.config.command_map[bin.to_sym] = begin
+        if bundler_loaded? && bin.to_s != "bundle"
+          "#{prefix} bundle exec #{bin}"
+        else
+          "#{prefix} #{bin}"
         end
       end
     end
