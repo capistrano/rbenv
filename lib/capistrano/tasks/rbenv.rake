@@ -1,26 +1,3 @@
-def bundler_loaded?
-  Gem::Specification::find_all_by_name('capistrano-bundler').any?
-end
-
-SSHKit.config.command_map = Hash.new do |hash, key|
-  if fetch(:rbenv_map_bins).include?(key.to_s)
-    prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-    hash[key] = if bundler_loaded? && key.to_s != "bundle"
-      "#{prefix} bundle exec #{key}"
-    else
-      "#{prefix} #{key}"
-    end
-  else
-    hash[key] = key
-  end
-end
-
-namespace :deploy do
-  before :starting, :hook_rbenv_bins do
-    invoke :'rbenv:check'
-  end
-end
-
 namespace :rbenv do
   task :check do
     on roles(:all) do
@@ -36,11 +13,23 @@ namespace :rbenv do
       end
     end
   end
+
+  task :map_bins do
+    rbenv_prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+
+    fetch(:rbenv_map_bins).each do |command|
+      SSHKit.config.command_map.prefix[command.to_sym].unshift(rbenv_prefix)
+    end
+  end
+end
+
+Capistrano::DSL.stages.each do |stage|
+  after stage, 'rbenv:map_bins'
+  after stage, 'rbenv:check'
 end
 
 namespace :load do
   task :defaults do
-
     set :rbenv_path, -> {
       rbenv_path = fetch(:rbenv_custom_path)
       rbenv_path ||= if fetch(:rbenv_type, :user) == :system
