@@ -16,5 +16,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'capistrano'
+  gem.add_dependency 'sshkit', '>= 1.2.0'
 
 end
