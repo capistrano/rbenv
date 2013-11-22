@@ -1,5 +1,5 @@
 namespace :rbenv do
-  task :check do
+  task :validate do
     on roles(:all) do
       rbenv_ruby = fetch(:rbenv_ruby)
       if rbenv_ruby.nil?
@@ -26,8 +26,8 @@ namespace :rbenv do
 end
 
 Capistrano::DSL.stages.each do |stage|
+  after stage, 'rbenv:validate'
   after stage, 'rbenv:map_bins'
-  after stage, 'rbenv:check'
 end
 
 namespace :load do
