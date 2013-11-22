@@ -17,6 +17,8 @@ namespace :rbenv do
   task :map_bins do
     rbenv_prefix = "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 
+    SSHKit.config.command_map[:rbenv] = "#{fetch(:rbenv_path)}/bin/rbenv"
+
     fetch(:rbenv_map_bins).each do |command|
       SSHKit.config.command_map.prefix[command.to_sym].unshift(rbenv_prefix)
     end
