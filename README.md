@@ -18,15 +18,15 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle --binstubs
-    $ cap install
+    $ bundle install
 
 ## Usage
 
     # Capfile
-
     require 'capistrano/rbenv'
 
+
+    # config/deploy.rb
     set :rbenv_type, :user # or :system, depends on your rbenv setup
     set :rbenv_ruby, '2.0.0-p247'
 
