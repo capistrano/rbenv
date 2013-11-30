@@ -8,6 +8,8 @@
   This gives us more flexible integration and command mapping.
   Fixed bug when `cap some_task` didn't invoke rbenv hooks.
 
+* prefix rails with rbenv by default
+
 # 0.0.1
 
 Initial release

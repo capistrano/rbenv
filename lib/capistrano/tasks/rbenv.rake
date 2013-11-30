@@ -41,6 +41,6 @@ namespace :load do
     }
 
     set :rbenv_ruby_dir, -> { "#{fetch(:rbenv_path)}/versions/#{fetch(:rbenv_ruby)}" }
-    set :rbenv_map_bins, %w{rake gem bundle ruby}
+    set :rbenv_map_bins, %w{rake gem bundle ruby rails}
   end
 end
