@@ -29,6 +29,7 @@ And then execute:
     # config/deploy.rb
     set :rbenv_type, :user # or :system, depends on your rbenv setup
     set :rbenv_ruby, '2.0.0-p247'
+    set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 
 If your rbenv is located in some custom path, you can use `rbenv_custom_path` to set it.
 
