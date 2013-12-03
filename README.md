@@ -5,9 +5,10 @@ This gem provides idiomatic rbenv support for Capistrano 3.x (and 3.x
 
 ## Please Note
 
-This ```capistrano-rbenv``` repo is different from the current
-```capistrano-rbenv``` gem on rubygems.org. You **must** specify
-**this github repo** in your Gemfile!
+If you want to use this plugin with Cap 2.x, please use 1.x version of the gem.
+Source code and docs for older integration is available in [another repo](https://github.com/yyuu/capistrano-rbenv)
+
+Thanks a lot to [@yyuu](https://github.com/yyuu) for merging his gem with official one.
 
 ## Installation
 

@@ -4,9 +4,9 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = "capistrano-rbenv"
-  gem.version       = '0.1.0'
-  gem.authors       = ["Kir Shatrov"]
-  gem.email         = ["shatrov@me.com"]
+  gem.version       = '2.0.0'
+  gem.authors       = ["Kir Shatrov", "Yamashita Yuu"]
+  gem.email         = ["shatrov@me.com", "yamashita@geishatokyo.com"]
   gem.description   = %q{rbenv integration for Capistrano}
   gem.summary       = %q{rbenv integration for Capistrano}
   gem.homepage      = "https://github.com/capistrano/rbenv"
