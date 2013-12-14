@@ -1,6 +1,6 @@
 namespace :rbenv do
   task :validate do
-    on roles(:all) do
+    on roles(fetch(:rbenv_roles)) do
       rbenv_ruby = fetch(:rbenv_ruby)
       if rbenv_ruby.nil?
         error "rbenv: rbenv_ruby is not set"
@@ -39,6 +39,8 @@ namespace :load do
         "~/.rbenv"
       end
     }
+
+    set :rbenv_roles, fetch(:rbenv_roles, :all)
 
     set :rbenv_ruby_dir, -> { "#{fetch(:rbenv_path)}/versions/#{fetch(:rbenv_ruby)}" }
     set :rbenv_map_bins, %w{rake gem bundle ruby rails}
