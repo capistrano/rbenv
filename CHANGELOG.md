@@ -1,3 +1,7 @@
+# 2.0.1
+
+* Added ability to setup custom `rbenv_roles` variable (default: :all).
+
 # 2.0.0
 
 * Added ability to setup custom `rbenv_prefix` variable.
