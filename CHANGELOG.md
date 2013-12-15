@@ -1,4 +1,4 @@
-# 2.0.1
+# 2.0.1 (not released)
 
 * Added ability to setup custom `rbenv_roles` variable (default: :all).
 
