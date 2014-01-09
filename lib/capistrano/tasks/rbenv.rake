@@ -1,6 +1,6 @@
 namespace :rbenv do
   task :validate do
-    on roles(fetch(:rbenv_roles)) do
+    on roles(*fetch(:rbenv_roles)) do
       rbenv_ruby = fetch(:rbenv_ruby)
       if rbenv_ruby.nil?
         error "rbenv: rbenv_ruby is not set"
