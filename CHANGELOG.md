@@ -1,6 +1,7 @@
-# 2.0.1 (not released)
+# 2.0.1 (9 Jan 2013)
 
 * Added ability to setup custom `rbenv_roles` variable (default: :all).
+* Fixed SSHKit dependency
 
 # 2.0.0
 
