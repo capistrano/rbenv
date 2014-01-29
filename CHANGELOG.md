@@ -1,4 +1,9 @@
-# 2.0.1 (9 Jan 2013)
+# 2.0.2 (29 Jan 2014)
+
+* Environment variables are set with native SSHKit API
+* Depend on capistrano 3.1
+
+# 2.0.1 (9 Jan 2014)
 
 * Added ability to setup custom `rbenv_roles` variable (default: :all).
 * Fixed SSHKit dependency
