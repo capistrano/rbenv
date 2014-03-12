@@ -7,9 +7,8 @@ namespace :rbenv do
         exit 1
       end
 
-      if test "[ ! -d #{fetch(:rbenv_ruby_dir)} ]"
+      unless test "[ -d #{fetch(:rbenv_ruby_dir)} ]"
         error "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)}"
-        exit 1
       end
     end
   end
