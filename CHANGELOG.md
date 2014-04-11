@@ -1,3 +1,7 @@
+# 2.0.3 (11 Apr 2014)
+
+* rbenv:validate is a 'success' if version exists
+
 # 2.0.2 (29 Jan 2014)
 
 * Environment variables are set with native SSHKit API
