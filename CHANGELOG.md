@@ -1,6 +1,6 @@
-# not released yet
+# 2.0.3 (27 Jan 2015)
 
-* rbenv:validate is a 'success' if version exists
+* rbenv:validate is a 'success' if version exists #36
 
 # 2.0.2 (29 Jan 2014)
 
