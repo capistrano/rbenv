@@ -1,6 +1,8 @@
 # 2.0.3 (27 Jan 2015)
 
 * rbenv:validate is a 'success' if version exists #36
+* MIT license included
+* rbenv command runs only on release_roles #44
 
 # 2.0.2 (29 Jan 2014)
 
