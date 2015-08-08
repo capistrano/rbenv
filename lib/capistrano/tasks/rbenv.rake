@@ -37,7 +37,7 @@ namespace :load do
       rbenv_path ||= if fetch(:rbenv_type, :user) == :system
         "/usr/local/rbenv"
       else
-        "~/.rbenv"
+        "/home/#{fetch(:deploy_user)}/.rbenv"
       end
     }
 
