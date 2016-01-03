@@ -1,4 +1,4 @@
-# master (unreleased)
+# 2.0.4 (3 Jan 2016)
 
 * Change default `rbenv_path` to use `$HOME` instead of `~`. This allows
   capistrano-rbenv to work with the new quoting behavior of sshkit 1.8.0.
