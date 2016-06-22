@@ -1,3 +1,5 @@
+include SSHKit::DSL
+
 namespace :rbenv do
   task :validate do
     on release_roles(fetch(:rbenv_roles)) do
