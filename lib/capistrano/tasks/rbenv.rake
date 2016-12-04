@@ -3,12 +3,12 @@ namespace :rbenv do
     on release_roles(fetch(:rbenv_roles)) do
       rbenv_ruby = fetch(:rbenv_ruby)
       if rbenv_ruby.nil?
-        error "rbenv: rbenv_ruby is not set"
-        exit 1
+        warn "rbenv: rbenv_ruby is not set"
       end
 
-      unless test "[ -d #{fetch(:rbenv_ruby_dir)} ]"
-        error "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)}"
+      # don't check the rbenv_ruby_dir if :rbenv_ruby is not set (it will always fail)
+      unless rbenv_ruby.nil? || (test "[ -d #{fetch(:rbenv_ruby_dir)} ]")
+        warn "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)}"
         exit 1
       end
     end

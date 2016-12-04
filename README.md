@@ -40,6 +40,15 @@ And then execute:
 
 If your rbenv is located in some custom path, you can use `rbenv_custom_path` to set it.
 
+### Defining the ruby version
+
+To set the Ruby version explicitly, add `:rbenv_ruby` to your Capistrano configuration:
+
+    # config/deploy.rb
+    set :rbenv_ruby, '2.0.0-p247'
+
+Alternatively, allow the remote host's `rbenv` to [determine the appropriate Ruby version](https://github.com/rbenv/rbenv#choosing-the-ruby-version) by omitting `:rbenv_ruby`. This approach is useful if you have a `.ruby-version` file in your project.
+
 ## Contributing
 
 1. Fork it
