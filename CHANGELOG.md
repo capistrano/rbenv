@@ -1,3 +1,7 @@
+# master
+
+* Make rbenv_ruby optional [#61](https://github.com/capistrano/rbenv/issues/61), [#67](https://github.com/capistrano/rbenv/pull/67)
+
 # 2.0.4 (3 Jan 2016)
 
 * Change default `rbenv_path` to use `$HOME` instead of `~`. This allows
