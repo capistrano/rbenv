@@ -1,4 +1,8 @@
-# master
+# [master][]
+
+* Your contribution here!
+
+# [2.1.0][] (4 Dec 2016)
 
 * Make rbenv_ruby optional [#61](https://github.com/capistrano/rbenv/issues/61), [#67](https://github.com/capistrano/rbenv/pull/67)
 
@@ -36,3 +40,7 @@ Capistrano 3 -ready release.
 # 1.0.5
 
 Versions < 2.0 are located in another repo: https://github.com/yyuu/capistrano-rbenv
+
+
+[master]: https://github.com/capistrano/rbenv/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/capistrano/rbenv/compare/v2.0.4...v2.1.0
