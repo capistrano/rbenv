@@ -1,6 +1,7 @@
 # [master][]
 
 * Your contribution here!
+* [#70](https://github.com/capistrano/rbenv/pull/70): Improve log message when rbenv_ruby is not set - [@ivanovaleksey](https://github.com/ivanovaleksey)
 
 # [2.1.0][] (4 Dec 2016)
 
