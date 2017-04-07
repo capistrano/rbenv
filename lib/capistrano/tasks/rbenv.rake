@@ -3,7 +3,7 @@ namespace :rbenv do
     on release_roles(fetch(:rbenv_roles)) do
       rbenv_ruby = fetch(:rbenv_ruby)
       if rbenv_ruby.nil?
-        warn "rbenv: rbenv_ruby is not set"
+        info 'rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv'
       end
 
       # don't check the rbenv_ruby_dir if :rbenv_ruby is not set (it will always fail)
@@ -35,9 +35,9 @@ namespace :load do
     set :rbenv_path, -> {
       rbenv_path = fetch(:rbenv_custom_path)
       rbenv_path ||= if fetch(:rbenv_type, :user) == :system
-        "/usr/local/rbenv"
+        '/usr/local/rbenv'
       else
-        "$HOME/.rbenv"
+        '$HOME/.rbenv'
       end
     }
 
