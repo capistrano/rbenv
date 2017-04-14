@@ -1,6 +1,9 @@
 # [master][]
 
 * Your contribution here!
+
+# [2.1.1][] (14 Apr 2017)
+
 * [#70](https://github.com/capistrano/rbenv/pull/70): Improve log message when rbenv_ruby is not set - [@ivanovaleksey](https://github.com/ivanovaleksey)
 
 # [2.1.0][] (4 Dec 2016)
@@ -43,5 +46,6 @@ Capistrano 3 -ready release.
 Versions < 2.0 are located in another repo: https://github.com/yyuu/capistrano-rbenv
 
 
-[master]: https://github.com/capistrano/rbenv/compare/v2.1.0...HEAD
+[master]: https://github.com/capistrano/rbenv/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/capistrano/rbenv/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/capistrano/rbenv/compare/v2.0.4...v2.1.0
