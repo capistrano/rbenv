@@ -1,6 +1,6 @@
 # [master][]
 
-* Your contribution here!
+* Add hanami to `rbenv_map_bins`
 
 # [2.1.1][] (14 Apr 2017)
 
