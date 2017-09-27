@@ -8,7 +8,7 @@ namespace :rbenv do
 
       # don't check the rbenv_ruby_dir if :rbenv_ruby is not set (it will always fail)
       unless rbenv_ruby.nil? || (test "[ -d #{fetch(:rbenv_ruby_dir)} ]")
-        warn "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)}"
+        warn "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)} on the remote host"
         exit 1
       end
     end
