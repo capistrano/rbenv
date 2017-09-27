@@ -1,6 +1,7 @@
 # [master][]
 
 * Your contribution here!
+* [#74](https://github.com/capistrano/rbenv/pull/74): Clarify the location where the ruby is missing - [@creitve](https://github.com/creitve)
 
 # [2.1.1][] (14 Apr 2017)
 
