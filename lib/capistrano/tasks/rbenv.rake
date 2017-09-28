@@ -1,6 +1,6 @@
 namespace :rbenv do
   task :validate do
-    on release_roles(fetch(:rbenv_roles)) do
+    on release_roles(fetch(:rbenv_roles)) do |host|
       rbenv_ruby = fetch(:rbenv_ruby)
       if rbenv_ruby.nil?
         info 'rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv'
@@ -8,7 +8,7 @@ namespace :rbenv do
 
       # don't check the rbenv_ruby_dir if :rbenv_ruby is not set (it will always fail)
       unless rbenv_ruby.nil? || (test "[ -d #{fetch(:rbenv_ruby_dir)} ]")
-        warn "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)}"
+        warn "rbenv: #{rbenv_ruby} is not installed or not found in #{fetch(:rbenv_ruby_dir)} on #{host}"
         exit 1
       end
     end
