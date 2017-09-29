@@ -14,8 +14,8 @@ Thanks a lot to [@yyuu](https://github.com/yyuu) for merging his gem with offici
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano', '~> 3.1'
-    gem 'capistrano-rbenv', '~> 2.0'
+    gem 'capistrano', '~> 3.9'
+    gem 'capistrano-rbenv', '~> 2.1'
 
 And then execute:
 
@@ -29,7 +29,7 @@ And then execute:
 
     # config/deploy.rb
     set :rbenv_type, :user # or :system, depends on your rbenv setup
-    set :rbenv_ruby, '2.0.0-p247'
+    set :rbenv_ruby, '2.4.2'
 
     # in case you want to set ruby version from the file:
     # set :rbenv_ruby, File.read('.ruby-version').strip
@@ -45,7 +45,7 @@ If your rbenv is located in some custom path, you can use `rbenv_custom_path` to
 To set the Ruby version explicitly, add `:rbenv_ruby` to your Capistrano configuration:
 
     # config/deploy.rb
-    set :rbenv_ruby, '2.0.0-p247'
+    set :rbenv_ruby, '2.4.2'
 
 Alternatively, allow the remote host's `rbenv` to [determine the appropriate Ruby version](https://github.com/rbenv/rbenv#choosing-the-ruby-version) by omitting `:rbenv_ruby`. This approach is useful if you have a `.ruby-version` file in your project.
 
