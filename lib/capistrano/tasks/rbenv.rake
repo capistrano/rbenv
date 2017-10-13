@@ -19,7 +19,7 @@ namespace :rbenv do
     rbenv_prefix = fetch(:rbenv_prefix, proc { "#{fetch(:rbenv_path)}/bin/rbenv exec" })
     SSHKit.config.command_map[:rbenv] = "#{fetch(:rbenv_path)}/bin/rbenv"
 
-    fetch(:rbenv_map_bins).each do |command|
+    fetch(:rbenv_map_bins).uniq.each do |command|
       SSHKit.config.command_map.prefix[command.to_sym].unshift(rbenv_prefix)
     end
   end
