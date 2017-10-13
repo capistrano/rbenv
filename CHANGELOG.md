@@ -1,7 +1,7 @@
 # [master][]
 
 * Your contribution here!
-* Enforce uniqueness of rbenv_map_bins.
+* [#75](https://github.com/capistrano/rbenv/pull/75): Enforce uniqueness of rbenv_map_bins.
 
 # [2.1.2][] (29 Sep 2017)
 
