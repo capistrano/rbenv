@@ -1,6 +1,9 @@
 # [master][]
 
 * Your contribution here!
+
+# [2.1.3][] (11 Nov 2017)
+
 * [#75](https://github.com/capistrano/rbenv/pull/75): Enforce uniqueness of rbenv_map_bins.
 
 # [2.1.2][] (29 Sep 2017)
@@ -51,7 +54,8 @@ Capistrano 3 -ready release.
 Versions < 2.0 are located in another repo: https://github.com/yyuu/capistrano-rbenv
 
 
-[master]: https://github.com/capistrano/rbenv/compare/v2.1.2...HEAD
+[master]: https://github.com/capistrano/rbenv/compare/v2.1.3...HEAD
+[2.1.3]: https://github.com/capistrano/rbenv/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/capistrano/rbenv/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/capistrano/rbenv/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/capistrano/rbenv/compare/v2.0.4...v2.1.0
