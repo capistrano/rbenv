@@ -15,6 +15,8 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.licenses      = ["MIT"]
+
   gem.add_dependency 'capistrano', '~> 3.1'
   gem.add_dependency 'sshkit', '~> 1.3'
 
