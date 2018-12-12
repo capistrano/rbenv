@@ -61,7 +61,7 @@ require capistrano/rbenv/without_hooks
 You can then add the hooks on a per deploy script basis
 
 ```ruby
-# config/deploy/my_stage_with_nvm.rb
+# config/deploy/my_stage_with_rbenv.rb
 Capistrano::DSL.stages.each do |stage|
   after stage, 'rbenv:validate'
   after stage, 'rbenv:map_bins'
