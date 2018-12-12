@@ -49,6 +49,25 @@ To set the Ruby version explicitly, add `:rbenv_ruby` to your Capistrano configu
 
 Alternatively, allow the remote host's `rbenv` to [determine the appropriate Ruby version](https://github.com/rbenv/rbenv#choosing-the-ruby-version) by omitting `:rbenv_ruby`. This approach is useful if you have a `.ruby-version` file in your project.
 
+### Explicitely require hooks
+
+Alternatively, if you want to have control on the execution of nvm tasks
+
+```ruby
+# Capfile
+require capistrano/rbenv/without_hooks
+```
+
+You can then add the hooks on a per deploy script basis
+
+```ruby
+# config/deploy/my_stage_with_nvm.rb
+Capistrano::DSL.stages.each do |stage|
+  after stage, 'rbenv:validate'
+  after stage, 'rbenv:map_bins'
+end
+```
+
 ## Contributing
 
 1. Fork it

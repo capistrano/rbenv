@@ -25,11 +25,6 @@ namespace :rbenv do
   end
 end
 
-Capistrano::DSL.stages.each do |stage|
-  after stage, 'rbenv:validate'
-  after stage, 'rbenv:map_bins'
-end
-
 namespace :load do
   task :defaults do
     set :rbenv_path, -> {
