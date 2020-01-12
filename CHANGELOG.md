@@ -2,6 +2,10 @@
 
 * Your contribution here!
 
+# [2.1.5][] (12 Jan 2019)
+
+* [#88](https://github.com/capistrano/rbenv/pull/88): Fix issue with sshkit escaping `$HOME`
+
 # [2.1.4][] (8 Sep 2018)
 
 * [#82](https://github.com/capistrano/rbenv/pull/82): Specify MIT license in gemspec
