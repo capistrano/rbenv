@@ -1,6 +1,7 @@
 # [master][]
 
 * Your contribution here!
+* Revert [#88](https://github.com/capistrano/rbenv/pull/88): Fix issue with sshkit escaping `$HOME`
 
 # [2.1.5][] (14 Jan 2020)
 
