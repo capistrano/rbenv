@@ -1,6 +1,9 @@
 # [master][]
 
 * Your contribution here!
+
+# [2.1.6][] (14 Jan 2020)
+
 * [#89](https://github.com/capistrano/rbenv/pull/89): Revert [#88](https://github.com/capistrano/rbenv/pull/88) Fix issue with sshkit escaping `$HOME`
 
 # [2.1.5][] (14 Jan 2020)
@@ -63,7 +66,8 @@ Capistrano 3 -ready release.
 Versions < 2.0 are located in another repo: https://github.com/yyuu/capistrano-rbenv
 
 
-[master]: https://github.com/capistrano/rbenv/compare/v2.1.5...HEAD
+[master]: https://github.com/capistrano/rbenv/compare/v2.1.6...HEAD
+[2.1.6]: https://github.com/capistrano/rbenv/compare/v2.1.5...v2.1.6
 [2.1.5]: https://github.com/capistrano/rbenv/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/capistrano/rbenv/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/capistrano/rbenv/compare/v2.1.2...v2.1.3
