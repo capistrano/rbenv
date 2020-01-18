@@ -23,20 +23,24 @@ And then execute:
 
 ## Usage
 
-    # Capfile
-    require 'capistrano/rbenv'
+```ruby
+# Capfile
+require 'capistrano/rbenv'
 
 
-    # config/deploy.rb
-    set :rbenv_type, :user # or :system, depends on your rbenv setup
-    set :rbenv_ruby, '2.4.2'
+# config/deploy.rb
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.4.2'
 
-    # in case you want to set ruby version from the file:
-    # set :rbenv_ruby, File.read('.ruby-version').strip
+# in case you want to set ruby version from the file:
+# set :rbenv_ruby, File.read('.ruby-version').strip
 
-    set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-    set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-    set :rbenv_roles, :all # default value
+# The following are defaults. You should #append to them in case other gems
+# have also overriden them.
+#set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+#set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+#set :rbenv_roles, :all
+```
 
 If your rbenv is located in some custom path, you can use `rbenv_custom_path` to set it.
 
