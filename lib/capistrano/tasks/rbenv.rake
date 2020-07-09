@@ -34,8 +34,11 @@ namespace :load do
   task :defaults do
     set :rbenv_path, -> {
       rbenv_path = fetch(:rbenv_custom_path)
-      rbenv_path ||= if fetch(:rbenv_type, :user) == :system
+      rbenv_path ||= case fetch(:rbenv_type, :user)
+      when :system
         '/usr/local/rbenv'
+      when :fullstaq
+        '/usr/lib/rbenv'
       else
         '$HOME/.rbenv'
       end
