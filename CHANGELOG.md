@@ -1,6 +1,7 @@
 # [master][]
 
 * Your contribution here!
+* [#92](https://github.com/capistrano/rbenv/pull/92): Explicit support for Fullstaq Ruby - [@FooBarWidget](https://github.com/FooBarWidget)
 
 # [2.1.6][] (14 Jan 2020)
 
