@@ -10,6 +10,9 @@ Gem::Specification.new do |gem|
   gem.description   = %q{rbenv integration for Capistrano}
   gem.summary       = %q{rbenv integration for Capistrano}
   gem.homepage      = "https://github.com/capistrano/rbenv"
+  gem.metadata      = {
+    "changelog_uri" => "https://github.com/capistrano/rbenv/releases"
+  }
 
   gem.files         = `git ls-files`.split($/)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
