@@ -15,7 +15,7 @@ Thanks a lot to [@yyuu](https://github.com/yyuu) for merging his gem with offici
 Add this line to your application's Gemfile:
 
     gem 'capistrano', '~> 3.9'
-    gem 'capistrano-rbenv', '~> 2.1'
+    gem 'capistrano-rbenv', '~> 2.2'
 
 And then execute:
 
