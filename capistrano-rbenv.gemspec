@@ -11,7 +11,8 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{rbenv integration for Capistrano}
   gem.homepage      = "https://github.com/capistrano/rbenv"
   gem.metadata      = {
-    "changelog_uri" => "https://github.com/capistrano/rbenv/releases"
+    "changelog_uri" => "https://github.com/capistrano/rbenv/releases",
+    "rubygems_mfa_required" => "true"
   }
 
   gem.files         = `git ls-files`.split($/)
